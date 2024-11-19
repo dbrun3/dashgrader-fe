@@ -1,10 +1,57 @@
+
+:root {
+  --mainRowHeight: 70vh;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.logo {
+  height: 18vh;
+  padding-bottom: 0px;
+  z-index: 100px;
+}
+
+strong {
+  font-size: 22px;
+}
+
+.downloads {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.downloadButtons {
+  align-content: center;
+  padding-left: 10px;
+}
+
+.downloadButtons button {
+  background-color: white; /* White background */
+  border: 2px solid #0392cf; /* Blue outline */
+  color: #0392cf; /* Text color matches outline */
+  padding: 10px 20px; /* Padding for size */
+  font-size: 16px; /* Font size */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth hover transition */
+  margin-left: 10px;
+  min-width: 100px;
+}
+
+.downloadButtons button:hover {
+  background-color: #0392cf; /* Blue background on hover */
+  color: white; /* White text on hover */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,15 +60,14 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: #9edbf9;
+  min-height: 95vh;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  padding-top: 10px;
   color: white;
+  min-width: 500px;
 }
 
 .App-link {
@@ -36,3 +82,76 @@
     transform: rotate(360deg);
   }
 }
+
+.mainRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottomRow {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  min-height: 88vh;
+}
+
+.imageHolder {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-height: 88vh;
+}
+
+.processButton {
+  margin: 20px;
+  width: 50%;
+  height: 50px;
+  font-size: 25px;
+  font-weight: bold; /* Makes the text bold */
+  color: white; /* Sets the text color to white */
+  background: repeating-linear-gradient(
+    45deg,
+    #ee4035 0%,
+    #ee4035 20%,
+    #f37736 20%,
+    #f37736 40%,
+    #fdf498 40%,
+    #fdf498 60%,
+    #7bc043 60%,
+    #7bc043 80%,
+    #0392cf 80%,
+    #0392cf 100%
+  );
+  border: none; /* Removes default border */
+  border-radius: 5px; /* Optional: Rounds corners */
+  padding: 10px 20px; /* Adds padding for the button */
+  cursor: pointer; /* Adds pointer cursor on hover */
+  text-transform: uppercase; /* Optional: Transforms text to uppercase */
+  background-size: 200%; /* Enlarges the gradient for smoother transitions */
+  transition: background 1s ease; /* Adds smooth transitions for hover effects */
+  box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.1);;
+}
+
+.processButton.on {
+  background-position: 100% 0; /* Moves the gradient on hover */
+}
+
+.processButton:hover {
+  background-position: 100% 0; /* Moves the gradient on hover */
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  color: black;
+}
+

@@ -1,0 +1,73 @@
+.buttonScroll {
+    overflow-y: scroll;
+    max-width: 25vw;
+    min-width: 330px;
+    padding: 10px;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Optional: for a visible boundary */
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Optional: subtle background */
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    margin-left: 50px;
+    height: var(--mainRowHeight);
+}
+
+.indexLabel {
+    text-align: right;
+    width: 20px;
+    color: black;
+    font-size: 20px;
+    align-content: center;
+    padding-right: 10px;
+}
+
+/* Center the container and enable scrolling on overflow */
+.buttonContainer {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: fit-content; /* Limit the height to make scrolling visible */
+  }
+  
+  /* Each row of buttons */
+  .buttonRow {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    margin-bottom: 10px;
+  }
+  
+  /* Style for circular buttons */
+  .circleButton {
+    width: 40px; /* Circle dimensions */
+    height: 40px;
+    margin: 0 5px; /* Spacing between buttons */
+    border-radius: 50%; /* Makes the button circular */
+    border: 2px solid #ccc; /* Border for better visibility */
+    background-color: white; /* Default background */
+    color: black; /* Default text color */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text inside the button */
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Highlight the selected button */
+  .circleButton.selected {
+    background-color: lightblue;
+    border-color: #007bff;
+    color: white;
+  }
+  
+  /* Button hover effect */
+  .circleButton:hover {
+    background-color: #0392cf;
+    color: white;
+    border-color: #0056b3;
+  }
+  
