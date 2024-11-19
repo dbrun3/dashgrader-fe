@@ -4,15 +4,14 @@ import GradedTestRow from '../../components/GradedTestRow';
 const FinishedTests = ({ gradedTests }) => {
 
     const [pressedRowIndex, setPressedRowIndex] = useState(null);
-    const handleTestButtonClick = (index) => {
+    const handleTestButtonClick = (index, error) => {
         setPressedRowIndex((prev) => (prev === index ? null : index));
     };
 
     const pressedImageBase64 =
         pressedRowIndex !== null
-            ? gradedTests.find((entry) => entry.index === pressedRowIndex)?.data.graded_test
-            : null;
-
+            ? gradedTests.find((entry) => entry.index === pressedRowIndex)?.data.graded_test ?? gradedTests.find((entry) => entry.index === pressedRowIndex)?.data.base64
+            : null
     return (<div className='bottomRow'>
         <ul style={{ width: "100%" }}>
             {gradedTests
@@ -21,7 +20,12 @@ const FinishedTests = ({ gradedTests }) => {
                 .map((entry, idx) => (
                     <li key={idx}>
                         {entry.error ? (
-                            `Error for file ${entry.index}: ${entry.error.message}`
+                            <GradedTestRow
+                                index={entry.index}
+                                error={entry.error}
+                                isPressed={pressedRowIndex === entry.index}
+                                onButtonClick={handleTestButtonClick}
+                            />
                         ) : (
                             <GradedTestRow
                                 index={entry.index}

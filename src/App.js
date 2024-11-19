@@ -54,11 +54,9 @@ function App() {
         })
         .catch((error) => {
           console.error(`Error for file ${index}:`, error);
-          setGradedTests((prevTests) => [...prevTests, { index: index, error: error }]);
+          setGradedTests((prevTests) => [...prevTests, { index: index, data: fileList[index], error: error }]);
         })
     );
-
-    setFileList([]);
   };
 
   const handleDownload = (sheet) => {
@@ -75,6 +73,16 @@ function App() {
     }
   }, [buttonPressed]);
 
+  useEffect(() => {
+    if (gradedTests.length > 0) {
+      setButtonPressed(false);
+      setFileList([]);
+    }
+
+  }, [gradedTests]);
+
+  console.log(gradedTests);
+
   return (
     <div className="App">
       <div className='header'>
@@ -89,13 +97,13 @@ function App() {
       </div>
       <div className='mainRow'>
         <DragAndDropUploader fileList={fileList} setFileList={setFileList} />
-        <DynamicButtonRows rows={rows} setRows={setRows} />
+        <DynamicButtonRows rows={rows} setRows={setRows} scroll={(gradedTests.length === 0)}/>
       </div>
       <button ref={buttonRef} className={`processButton ${buttonPressed ? "on" : ""}`} onClick={convertFilesToBase64AndSend}>Dash Grade</button>
       {(buttonPressed && gradedTests.length === 0) && <div className={"imageHolder"}>
         <img src="Rainbow_dash_sword_tpp_by_creshosk-d42e6e3.webp" alt="Loading..." />
       </div>}{/*https://i.gifer.com/origin/c1/c1e52de687b5acd4a359eb936d05de99_w200.webp */}
-      {(buttonPressed && gradedTests.length !== 0) && <FinishedTests gradedTests={gradedTests}/>}
+      {(gradedTests.length !== 0) && <FinishedTests gradedTests={gradedTests} fileList={fileList}/>}
     </div>
   );
 }

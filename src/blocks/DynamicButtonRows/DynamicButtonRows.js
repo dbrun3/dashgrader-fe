@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import "./DynamicButtonRows.css";
 
-const DynamicButtonRows = ({rows, setRows}) => {
+const DynamicButtonRows = ({rows, setRows, scroll}) => {
 
   const containerRef = useRef(null);
 
@@ -25,8 +25,10 @@ const DynamicButtonRows = ({rows, setRows}) => {
 
     useEffect(() => {
       // Scroll to the bottom when messages change
-      containerRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }, [rows]);
+      if(scroll){
+        containerRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, [rows, scroll]);
 
   return (
     <div className="buttonScroll">

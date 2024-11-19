@@ -1,6 +1,6 @@
 import React from "react";
 
-const GradedTestRow = ({ index, score, isPressed, onButtonClick }) => {
+const GradedTestRow = ({ index, score, error, isPressed, onButtonClick }) => {
   return (
     <div
       style={{
@@ -17,8 +17,9 @@ const GradedTestRow = ({ index, score, isPressed, onButtonClick }) => {
         background: isPressed ? "#eef" : "#f9f9f9",
       }}
     >
-      <div>
-        <strong>Index:</strong> {index + 1} | <strong>Score:</strong> {score}
+      <div style={error ? {color:"red"} : {}}>
+        <strong>Index:</strong> {index + 1} | <strong>
+          {`${error? "Error" : "Score"}:`}</strong> {`${error? error : `${score}%`}`}
       </div>
       <button
         style={{
