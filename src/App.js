@@ -4,6 +4,7 @@ import DragAndDropUploader from './blocks/DragAndDropUploader/DragAndDropUploade
 import DynamicButtonRows from './blocks/DynamicButtonRows/DynamicButtonRows';
 import FinishedTests from './blocks/FinishedTests/FinishedTests';
 import './App.css';
+import Dropdown from './components/Dropdown';
 
 function App() {
   const [fileList, setFileList] = useState([]);
@@ -89,10 +90,11 @@ function App() {
         <img className='logo' src="assets/logoOutlined.png" alt="DashGrader"></img>
         <div className='downloads'>
           <div><strong>Get the sheets here!</strong></div>
-          <div className='downloadButtons'>
-            <button onClick={() => handleDownload("single-sheet")}> Single </button>
-            <button onClick={() => handleDownload("double-sheet")}> Double </button>
-          </div>
+          <Dropdown label="Print">
+            <button className="printOpt" onClick={() => handleDownload("single-sheet")}> Single </button>
+            <button className="printOpt" onClick={() => handleDownload("double-sheet")}> Double </button>
+            <button className="printOpt" onClick={() => handleDownload("two-sheets")}> Two Sheets </button>
+          </Dropdown>
         </div>
       </div>
       <div className='mainRow'>

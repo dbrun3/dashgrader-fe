@@ -20,8 +20,9 @@
   z-index: 100px;
 }
 
-strong {
-  font-size: 22px;
+.downloads strong {
+  font-size: 24px;
+  margin-right: 20px;
 }
 
 .downloads {
@@ -29,29 +30,6 @@ strong {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-}
-
-.downloadButtons {
-  align-content: center;
-  padding-left: 10px;
-}
-
-.downloadButtons button {
-  background-color: white; /* White background */
-  border: 2px solid #0392cf; /* Blue outline */
-  color: #0392cf; /* Text color matches outline */
-  padding: 10px 20px; /* Padding for size */
-  font-size: 16px; /* Font size */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: all 0.3s ease; /* Smooth hover transition */
-  margin-left: 10px;
-  min-width: 100px;
-}
-
-.downloadButtons button:hover {
-  background-color: #0392cf; /* Blue background on hover */
-  color: white; /* White text on hover */
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -1,0 +1,55 @@
+.dropdown {
+    background-color: white; /* White background */
+    border: 3px solid #0392cf; /* Blue outline */
+    color: #0392cf; /* Text color matches outline */
+    padding: 10px 20px; /* Padding for size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth hover transition */
+    min-width: 100px;
+    font-size: 20px;
+    z-index: 100;
+    box-shadow: inset 0px 0px 4px 4px #0392cf1e;
+  }
+  
+  .dropdownContainer {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    background-color: white;
+    border: #0392cf;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 10;
+    max-width: 100px;
+  }
+  
+  .printOpt {
+    width: 100%;
+    background-color: white; /* White background */
+    padding: 10px; /* Add padding for better spacing */
+    cursor: pointer; /* Change cursor to pointer */
+    border: none;
+  }
+  
+  .printOpt:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+  }
+  
+  .printOpt:not(:last-child) {
+    border-bottom: 1px solid #ddd; /* Add a border between options */
+  }
+  
+  .printOpt:last-child {
+    border-radius: 0 0 5px 5px; /* Only bottom-left and bottom-right corners */
+  }
+  
+  .dropdown:hover {
+    background-color: #0392cf; /* Blue background on hover */
+    color: white; /* White text on hover */
+  }
+  
+  .dropdown.open {
+    background-color: #0392cf; /* Blue background on hover */
+    color: white; /* White text on hover */
+  }

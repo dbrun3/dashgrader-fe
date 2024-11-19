@@ -39,7 +39,7 @@ const FinishedTests = ({ gradedTests }) => {
         </ul>
 
         {pressedImageBase64 && (
-            <div style={{ marginTop: "20px", textAlign: "center", paddingLeft: "10px" }}>
+            <div style={{ textAlign: "center", paddingLeft: "10px" }}>
                 <img
                     src={`data:image/jpeg;base64,${pressedImageBase64}`}
                     alt={`Graded Test ${pressedRowIndex}`}

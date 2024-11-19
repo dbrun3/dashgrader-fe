@@ -19,7 +19,7 @@ const GradedTestRow = ({ index, score, error, isPressed, onButtonClick }) => {
     >
       <div style={error ? {color:"red"} : {}}>
         <strong>Index:</strong> {index + 1} | <strong>
-          {`${error? "Error" : "Score"}:`}</strong> {`${error? error : `${score}%`}`}
+          {`${error? "Error" : "Score"}:`}</strong> {`${error? error.message : `${score}%`}`}
       </div>
       <button
         style={{
