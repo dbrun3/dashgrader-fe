@@ -1,10 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
+import pLimit from 'p-limit';
 
 import DragAndDropUploader from './blocks/DragAndDropUploader/DragAndDropUploader';
 import DynamicButtonRows from './blocks/DynamicButtonRows/DynamicButtonRows';
 import FinishedTests from './blocks/FinishedTests/FinishedTests';
 import './App.css';
 import Dropdown from './components/Dropdown';
+
+const limit = pLimit(10); // Max 25 concurrent requests
 
 function App() {
   const [fileList, setFileList] = useState([]);
@@ -35,7 +38,7 @@ function App() {
 
     Array.from(fileList).map(async (file, index) =>
       // Perform the HTTP POST request with .then
-      fetch("https://om1i1j9kdd.execute-api.us-east-1.amazonaws.com/default/autogradeLambda", {
+      limit(() => fetch("https://om1i1j9kdd.execute-api.us-east-1.amazonaws.com/default/autogradeLambda", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +60,7 @@ function App() {
           console.error(`Error for file ${index}:`, error);
           setGradedTests((prevTests) => [...prevTests, { index: index, data: fileList[index], error: error }]);
         })
-    );
+    ));
   };
 
   const handleDownload = (sheet) => {
