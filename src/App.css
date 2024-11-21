@@ -72,7 +72,8 @@ body {
   display: flex;
   flex-direction: row;
   align-items: start;
-  min-height: 88vh;
+  height: 88vh; /* Replace max-height with height */
+  overflow: auto;
 }
 
 .imageHolder {
