@@ -12,10 +12,10 @@
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
+  height: 18vh;
 }
 
 .logo {
-  height: 18vh;
   padding-bottom: 0px;
   z-index: 100px;
 }
@@ -45,7 +45,7 @@ body {
   padding-right: 20vw;
   padding-top: 10px;
   color: white;
-  min-width: 500px;
+  min-width: 720px;
 }
 
 .App-link {
@@ -133,4 +133,3 @@ ul {
 li {
   color: black;
 }
-
