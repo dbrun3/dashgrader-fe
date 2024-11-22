@@ -65,7 +65,7 @@ function App() {
 
   const handleDownload = (sheet) => {
     const link = document.createElement('a');
-    link.href = `/sheets/${sheet}.pdf`; // Path to your PDF file
+    link.href = `${process.env.PUBLIC_URL}/sheets/${sheet}.pdf`; // Path to your PDF file
     link.download = `${sheet}.pdf`; // File name for the downloaded file
     link.click();
 };
@@ -90,7 +90,7 @@ function App() {
   return (
     <div className="App">
       <div className='header'>
-        <img className='logo' src="assets/logoOutlined.png" alt="DashGrader"></img>
+        <img className='logo' src={`${process.env.PUBLIC_URL}/assets/logoOutlined.png`} alt="DashGrader"></img>
         <div className='downloads'>
           <div><strong>Get the sheets here!</strong></div>
           <Dropdown label="Print">
@@ -106,7 +106,7 @@ function App() {
       </div>
       <button ref={buttonRef} className={`processButton ${buttonPressed ? "on" : ""}`} onClick={convertFilesToBase64AndSend}>Dash Grade</button>
       {(buttonPressed && gradedTests.length === 0) && <div className={"imageHolder"}>
-        <img src="Rainbow_dash_sword_tpp_by_creshosk-d42e6e3.webp" alt="Loading..." />
+        <img src={`${process.env.PUBLIC_URL}/Rainbow_dash_sword_tpp_by_creshosk-d42e6e3.webp`} alt="Loading..." />
       </div>}{/*https://i.gifer.com/origin/c1/c1e52de687b5acd4a359eb936d05de99_w200.webp */}
       {(gradedTests.length !== 0) && <FinishedTests gradedTests={gradedTests} fileList={fileList}/>}
     </div>
