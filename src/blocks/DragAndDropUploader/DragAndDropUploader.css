@@ -1,7 +1,6 @@
 .labelUploader {
     flex: 1;
     position: relative;
-    max-width: 600px;
     min-width: 340px;
     max-height: var(--mainRowHeight);
     border: 2px dashed #ccc;
