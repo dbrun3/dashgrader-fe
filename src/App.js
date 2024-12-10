@@ -7,7 +7,7 @@ import FinishedTests from './blocks/FinishedTests/FinishedTests';
 import './App.css';
 import Dropdown from './components/Dropdown';
 
-const limit = pLimit(10); // Max 25 concurrent requests
+const limit = pLimit(100); // Max 100 concurrent requests
 
 function App() {
   const [fileList, setFileList] = useState([]);
