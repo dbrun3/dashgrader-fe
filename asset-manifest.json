@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dashgrader-fe/static/css/main.2fcc6459.css",
-    "main.js": "/dashgrader-fe/static/js/main.419c8a3d.js",
+    "main.js": "/dashgrader-fe/static/js/main.bf0afa33.js",
     "static/js/453.2db670f0.chunk.js": "/dashgrader-fe/static/js/453.2db670f0.chunk.js",
     "index.html": "/dashgrader-fe/index.html",
     "main.2fcc6459.css.map": "/dashgrader-fe/static/css/main.2fcc6459.css.map",
-    "main.419c8a3d.js.map": "/dashgrader-fe/static/js/main.419c8a3d.js.map",
+    "main.bf0afa33.js.map": "/dashgrader-fe/static/js/main.bf0afa33.js.map",
     "453.2db670f0.chunk.js.map": "/dashgrader-fe/static/js/453.2db670f0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2fcc6459.css",
-    "static/js/main.419c8a3d.js"
+    "static/js/main.bf0afa33.js"
   ]
 }
